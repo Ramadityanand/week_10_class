@@ -8,7 +8,11 @@
           anonymous
         <% end %>
       </h4>
+      <% if post.uploaded_attachment.attached? %>
+        <img src=<%= url_for(post.uploaded_attachment) %>"" class="img-fluid">
+      <% else %>
       <img src="<%= post.image %>" class="img-fluid">
+      <% end %>
       <p><%= post.body %></p>
     </div>
   <% end %>
